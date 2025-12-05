@@ -1,0 +1,214 @@
+{
+	"info": {
+		"_postman_id": "50608166-acdbff4d-a639-4df3-bbc2-206329af9e56",
+		"name": "Easy App",
+		"description": "サンプルのREST APIです。",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "login",
+			"item": [
+				{
+					"name": "認証",
+					"id": "50608166-868210f4-3828-41d2-a5e4-21e286443b2b",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"nob\",\n  \"password\": \"p@ssw0rd\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						},
+						"description": "認証処理を行います。リクエストに不備があった場合はエラーレスポンスを返します。"
+					},
+					"response": [
+						{
+							"id": "50608166-18f4fad0-faec-4159-b38a-d6795a6dbd91",
+							"name": "正常に処理された場合",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"nob\",\n  \"password\": \"p@ssw0rd\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"valid\": true\n}"
+						}
+					]
+				}
+			],
+			"id": "50608166-ee83b959-e8a7-4634-9a4a-53b6e8992631"
+		},
+		{
+			"name": "me",
+			"item": [
+				{
+					"name": "ユーザ情報取得",
+					"id": "50608166-9b116ef1-b40a-4260-8218-150edf0751a9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/me?name=nob",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"me"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "nob",
+									"description": "ユーザ名"
+								}
+							]
+						},
+						"description": "ユーザ情報を取得します。"
+					},
+					"response": [
+						{
+							"id": "50608166-48682dc8-bff5-4742-a447-f6d8df7ed237",
+							"name": "正常に処理された場合",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/me?name=nob",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"me"
+									],
+									"query": [
+										{
+											"description": "ユーザ名",
+											"key": "name",
+											"value": "nob"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"responseTime": null,
+							"body": "{\n  \"age\": 13,\n  \"name\": \"nob\"\n}"
+						}
+					]
+				}
+			],
+			"id": "50608166-4d682046-5025-498c-913a-ef54f7cac4c2"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "bedfd2e4-d4f3-4634-b2f7-7358d83e7814",
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "49fc8afd-c892-43a5-8238-a9b69ed752e8",
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
